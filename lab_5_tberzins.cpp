@@ -17,7 +17,7 @@
   */
 
   void printInputValidationError(){
-cout << "Error: The max digit must be greater than 4 and less than 10.   Please try again." << endl;
+cout << "Error: The max digit must be greater than 4 and less than 10.   Please try again.";
 }
 
 
@@ -42,6 +42,8 @@ bool isMaxDigitInputValid(int input){
 int getMaxDigitInput(){
     int maxDigit;
     cin >> maxDigit;
+    cout << "Max digit: " << maxDigit << endl;
+
 
     return maxDigit;
 }
@@ -67,4 +69,20 @@ void printMultiplicationTable(int maxDigit){
  * @return: 0 to indicate success.
  */
 int main(){
+
+    int maxDigit;
+
+    cout << "Please enter the maximum digit for the multiplication table" << endl <<"The digit must be greater than 4 and less than 10.";
+    maxDigit = getMaxDigitInput();
+
+
+    while(!isMaxDigitInputValid(maxDigit)){
+        printInputValidationError();
+        maxDigit = getMaxDigitInput();
+    }
+
+    printMultiplicationTable(maxDigit);
+
+    return 0;
+}
 
