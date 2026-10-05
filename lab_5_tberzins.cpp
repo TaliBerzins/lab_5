@@ -17,7 +17,7 @@
   */
 
   void printInputValidationError(){
-cout << "Invalid input. Please enter a number between 5 and 9." << endl;
+cout << "Error: The max digit must be greater than 4 and less than 10.   Please try again." << endl;
 }
 
 
@@ -39,7 +39,12 @@ bool isMaxDigitInputValid(int input){
  * @param: None.
  * @return: A validated int representing the maximum digit.
  */
-int getMaxDigitInput();
+int getMaxDigitInput(){
+    int maxDigit;
+    cin >> maxDigit;
+
+    return maxDigit;
+}
 
 
 /** 
@@ -47,8 +52,15 @@ int getMaxDigitInput();
 * @param: maxDigit - The highest digit to include in the table.
 * @return: None (void).
 */
-void printMultiplicationTable(int maxDigit);
+void printMultiplicationTable(int maxDigit){
 
+    for(int i =1; i<=maxDigit; i++){
+        for(int j =1; j<=maxDigit; j++){
+            cout << i*j << " ";
+        }
+        cout << endl;
+    }
+}
 /** 
  * @brief: Entry point of the program.
  * @param: None.
